@@ -6,7 +6,7 @@ public class SubTask4 {
     public static void main(String[] args)
     {
         String s = "12332321";
-        String replacements = "2R3S1T4D";
+        String replacements = "3S1T4D";
         if(!checkUsingRegExp(s, replacements)) {
             System.out.println("ERROR: The replacement string is not correct.");
             return;
@@ -24,28 +24,7 @@ public class SubTask4 {
         }
         return sb.toString();
     }
-//    public static boolean checkCustomReg(String s, String replacements )
-//    {
-//        Set<Character> numStr = new HashSet<>();
-//        for (int i = 0;i<s.length();i++)
-//        {
-//            numStr.add(s.charAt(i));
-//        }
-//        ArrayList<Character> numArr = new ArrayList<>(numStr);
-//        ArrayList<Character> repArr = new ArrayList<>();
-//        for (int i=0;i<replacements.length();i++)
-//        {
-//            repArr.add(replacements.charAt(i));
-//        }
-//        Collections.sort(repArr);
-//        for(int i = 1; i<replacements.length();i+=2)
-//        {
-//            if(Character.isLetter(replacements.charAt(i))) continue;
-//            return false;
-//        }
-//        if (!numArr.equals(repArr)) return false;
-//        return true;
-//    }
+
 public static boolean checkUsingRegExp(String s, String replacements) {
     Set<Character> numericStringSet = new HashSet<>();
     for (int i = 0; i < s.length(); i++) {
@@ -60,7 +39,8 @@ public static boolean checkUsingRegExp(String s, String replacements) {
     }
     Collections.sort(numericReplacementsArray);
 
-    if (!numericReplacementsArray.equals(numericStringArray)) {
+    for (int i=0;i< numericStringSet.size();i++){
+        if (numericStringArray.get(i) == numericReplacementsArray.get(i)) continue;
         return false;
     }
 

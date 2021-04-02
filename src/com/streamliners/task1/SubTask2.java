@@ -7,9 +7,14 @@ public class SubTask2 {
     }
 
     private static int totalWeight(String s, int[] weights) {
-        //Write your code here!
+        int sum = 0;
+        for (int i =0 ; i<s.length();i++)
+        {
+            int index = s.charAt(i)-65;
+            sum+=weights[index];
+        }
 
-        return 0;
+        return sum;
     }
 
 }

@@ -19,5 +19,5 @@ public class TwoStringsAreAnagram {
         else
             System.out.println("strings are not anagram");
     }
-    
+
 }

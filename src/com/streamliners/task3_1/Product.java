@@ -7,7 +7,6 @@ public class Product {
     //default constructor
     Product() {
 
-
     }
     Product(String name, int price) {
         this.name = name;
